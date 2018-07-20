@@ -1,0 +1,10 @@
+a{
+  margin:50px 10px;
+  text-decoration:none;
+  text-transform:uppercase;
+  color:black;
+}
+
+a:hover{
+  color:red;
+}
