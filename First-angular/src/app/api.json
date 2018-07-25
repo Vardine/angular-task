@@ -1,9 +1,4 @@
-
-
-export class Api {
-    login_array ;
-
-    jsoncontent = [{
+ [{
     "firstName":"Vardi",
     "lastName":"Hayrapetyan",
     "email":"vardi.hayrapetyan@gmail.com",
@@ -20,7 +15,4 @@ export class Api {
     "lastName":"Atabekyan",
     "email":"mar85@gmail.com",
     "password":"159753"
-  }];
-  constructor() {
-  }
-}
+  }]

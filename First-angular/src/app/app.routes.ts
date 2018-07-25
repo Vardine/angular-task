@@ -7,19 +7,9 @@ import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 
-const APP_ROUTES: Routes = [
-
-  {
-    path:'',
-    component:LoginComponent
-  },
-  {
+const APP_ROUTES: Routes = [{
     path:'admin',
     component:AdminComponent
-  },
-  {
-    path:'',
-    component:RegistrationComponent
   },
   {
     path:'',

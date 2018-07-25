@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Api } from '../api';
+import { AuthService } from '../auth.service';
 import{ Router } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
 
@@ -11,7 +11,7 @@ import { LoginComponent } from '../login/login.component';
 export class RegistrationComponent implements OnInit {
   newUser: any;
   newArray:any;
-  constructor(private router: Router, private api: Api ) {}
+  constructor(private router: Router, private auth: AuthService ) {}
   ngOnInit() {
 
   }
@@ -28,14 +28,14 @@ signUser(e){
     "password": password
   };
 
-  this.api.jsoncontent.push(this.newUser);
+  this.auth.userData.push(this.newUser);
 
-  this.newArray = this.api.jsoncontent;
+  this.newArray = this.auth.userData;
 
   for(let user of this.newArray) {
   if (signEmail == user["email"] && password == user["password"]) {
     this.router.navigate(['/admin']);
-    this.api.login_array  = user;
+    this.auth.login_array  = user;
   }
 }
 }

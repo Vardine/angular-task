@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Api } from '../api';
+import { AuthService } from '../auth.service';
 import { LoginComponent } from '../login/login.component';
 import { RegistrationComponent } from '../registration/registration.component';
 
@@ -12,8 +12,8 @@ export class AdminComponent implements OnInit {
   loginData: any ;
   firstName: any ;
   lastName: any ;
-  constructor( private api: Api ) {
-      this.loginData = this.api.login_array;
+  constructor( private auth: AuthService ) {
+      this.loginData = this.auth.login_array;
   }
 
   ngOnInit() {
