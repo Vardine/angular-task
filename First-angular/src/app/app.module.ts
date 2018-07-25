@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+/*import { RouterModule } from '@angular/router';*/
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -12,6 +12,7 @@ import { Api } from './api';
 import {FormsModule} from '@angular/forms';
 import { RegistrationComponent } from './registration/registration.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { APP_ROUTES_PROVIDER } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -26,24 +27,25 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     HttpClientModule,
     FormsModule,
     NgxSpinnerModule,
-    RouterModule.forRoot([
+    APP_ROUTES_PROVIDER,
+    /*RouterModule.forRoot([
       {
-        path:'login',
+        path:'',
         component:LoginComponent
       },
       {
-        path:'login/:admin',
+        path:'admin',
         component:AdminComponent
       },
       {
-        path:'login',
+        path:'',
         component:RegistrationComponent
       },
       {
         path:'',
         component:HomeComponent
       }
-    ])
+    ])*/
   ],
   providers: [AuthService, Api],
   bootstrap: [AppComponent]

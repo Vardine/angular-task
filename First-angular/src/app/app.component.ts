@@ -5,6 +5,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { AdminComponent } from './admin/admin.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,7 +13,9 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class AppComponent {
   title = 'app';
+
   constructor(private spinner: NgxSpinnerService ) {}
+
   ngOnInit() {
     /** spinner starts on init */
     this.spinner.show();

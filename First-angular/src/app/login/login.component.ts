@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     var password = e.target.elements[1].value;
     for(let x of this.api.jsoncontent) {
     if (loggedEmail == x["email"] && password == x["password"]) {
-      this.router.navigate(['login/:admin']);
+      this.router.navigate(['/admin']);
       this.api.login_array  = x;
     }
   }

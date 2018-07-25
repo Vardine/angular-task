@@ -34,7 +34,7 @@ signUser(e){
 
   for(let user of this.newArray) {
   if (signEmail == user["email"] && password == user["password"]) {
-    this.router.navigate(['login/:admin']);
+    this.router.navigate(['/admin']);
     this.api.login_array  = user;
   }
 }
