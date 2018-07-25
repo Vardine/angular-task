@@ -10,7 +10,8 @@ import { AdminComponent } from './admin/admin.component';
 import { AuthService } from './auth.service';
 import { Api } from './api';
 import {FormsModule} from '@angular/forms';
-import { RegistrationComponent } from './registration/registration.component'
+import { RegistrationComponent } from './registration/registration.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { RegistrationComponent } from './registration/registration.component'
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    NgxSpinnerModule,
     RouterModule.forRoot([
       {
         path:'login',
