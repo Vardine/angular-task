@@ -13,6 +13,7 @@ import {FormsModule} from '@angular/forms';
 import { RegistrationComponent } from './registration/registration.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { APP_ROUTES_PROVIDER } from './app.routes';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { APP_ROUTES_PROVIDER } from './app.routes';
     LoginComponent,
     AdminComponent,
     RegistrationComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

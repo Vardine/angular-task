@@ -21,7 +21,11 @@
             <div *ngIf="email.errors.minlength">Email length should be minimum {{email.errors.minlength.requiredLength}}</div>
           </span>
 
-          <input type= "password" placeholder="New Password" required/><br>
+          <input minlength ="8" ngModel name="password" #password="ngModel" type= "password" placeholder="New Password" required/><br>
+          <span *ngIf="password.touched && !password.valid">
+            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.minlength">Password length should be minimum {{password.errors.minlength.requiredLength}}</div>
+          </span>
 
           <button type="submit" value="Submit" [disabled]="!signForm.form.valid">Sign Up</button>
      </form>
