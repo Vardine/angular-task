@@ -1,3 +1,30 @@
-input, button {
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+.logo{
+  color:white;
+  font-size:30px;
+}
+header{
+  background-color:#3e5b99;
+  display:flex;
+  justify-content:center;
+}
+
+.container{
+  width:982px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+label{
+  color:white;
+}
+input, button{
   margin:20px 5px;
+}
+span{
+  color:red;
 }

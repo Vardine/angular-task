@@ -1,5 +1,28 @@
-<form (submit)= "loginUser($event)">
-  <input type= "text" placeholder="Username"/>
-  <input type= "password" placeholder="Password"/>
-  <button type="submit" value="Submit">Submit</button>
-</form>
+<header>
+  <div class="container">
+    <div class="logo">facebook</div>
+    <div class="form">
+        <form name="userForm"  (submit)="loginUser($event)" novalidate>
+
+           <label>Email or Phone</label>
+           <input minlength ="10"
+                  ngModel
+                  name="email"
+                  #email="ngModel"
+                  type="email"
+                  required /><br>
+           <span *ngIf="email.touched && !email.valid">
+             <div *ngIf="email.errors.required">Email is required</div>
+             <div *ngIf="email.errors.minlength">Email length should be minimum {{email.errors.minlength.requiredLength}}</div>
+           </span>
+
+            <label>Password</label>
+            <input minlength ="6" maxlength ="10" ngModel name="password" #password="ngModel" type= "password" required/><br>
+            <span *ngIf="password.touched && !password.valid">Password is required</span>
+
+            <button type="submit" value="Submit" ng-disabled="userForm.invalid" >Log In</button>
+       </form>
+    </div>
+  </div>
+</header>
+<app-registration></app-registration>

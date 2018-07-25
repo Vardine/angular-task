@@ -1,0 +1,30 @@
+<div class="sign_up">
+  <div class="container">
+   <div>
+      <p>Sign Up</p>
+      <form name="signForm" #signForm="ngForm" novalidate (submit)="signUser($event)">
+          <input minlength ="4" ngModel name="firstName" #firstName="ngModel" type= "firstName" placeholder="First Name" required/><br>
+          <span *ngIf="firstName.touched && !firstName.valid">
+            <div *ngIf="firstName.errors.required">First Name is required</div>
+            <div *ngIf="firstName.errors.minlength">First Nameshould be minimum {{firstName.errors.minlength.requiredLength}}</div>
+          </span>
+
+          <input  minlength ="4" ngModel name="lastName" #lastName="ngModel" type= "lastName" placeholder="Last Name" required/><br>
+          <span *ngIf="lastName.touched && !lastName.valid">
+            <div *ngIf="lastName.errors.required">Last Name is required</div>
+            <div *ngIf="lastName.errors.minlength">Last Nameshould be minimum {{lastName.errors.minlength.requiredLength}}</div>
+          </span>
+
+          <input minlength ="10" ngModel name="email" #email="ngModel"  type= "email" placeholder="Email or Phone Number" required/><br>
+          <span *ngIf="email.touched && !email.valid">
+            <div *ngIf="email.errors.required">Email is required</div>
+            <div *ngIf="email.errors.minlength">Email length should be minimum {{email.errors.minlength.requiredLength}}</div>
+          </span>
+
+          <input type= "password" placeholder="New Password" required/><br>
+
+          <button type="submit" value="Submit" [disabled]="!signForm.form.valid">Sign Up</button>
+     </form>
+  </div>
+</div>
+</div>

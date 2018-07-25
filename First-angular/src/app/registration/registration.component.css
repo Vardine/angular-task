@@ -1,0 +1,13 @@
+.container{
+  width:982px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+input, button{
+  margin:5px 5px;
+}
+.sign_up{
+  display:flex;
+  justify-content:flex-end;
+}
