@@ -11,6 +11,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { APP_ROUTES_PROVIDER } from './app.routes';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [

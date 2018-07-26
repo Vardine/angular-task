@@ -12,7 +12,7 @@ export class AuthService {
   }
 
     getArray() {
-    return this.http.get('../assets/api.json');
+    return this.http.get('https://first-angular-1f76e.firebaseio.com/.json');
   }
 
 
