@@ -15,12 +15,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private router: Router, private auth: AuthService ) {}
   ngOnInit(){
-    this.showArray();
-    console.log(this.userData);
-  }
-  showArray() {
     this.auth.getArray()
-      .subscribe(data => this.userData = data
+      .subscribe(data => { this.userData = data}
       );
   }
 

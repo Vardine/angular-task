@@ -9,7 +9,6 @@
                   ngModel
                   name="email"
                   #email="ngModel"
-                  type="email"
                   required /><br>
            <span *ngIf="email.touched && !email.valid">
              <div *ngIf="email.errors.required">Email is required</div>

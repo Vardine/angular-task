@@ -11,10 +11,17 @@ import { LoginComponent } from '../login/login.component';
 export class RegistrationComponent implements OnInit {
   newUser: any;
   newArray:any;
+  userData;
   constructor(private router: Router, private auth: AuthService ) {}
   ngOnInit() {
-
+   this.showArray();
   }
+  showArray() {
+    this.auth.getArray()
+      .subscribe(data => this.userData = data
+      );
+  }
+
 signUser(e){
   var firstName = e.target.elements[0].value;
   var lastName = e.target.elements[1].value;
@@ -28,9 +35,9 @@ signUser(e){
     "password": password
   };
 
-  this.auth.userData.push(this.newUser);
+  this.userData.push(this.newUser);
 
-  this.newArray = this.auth.userData;
+  this.newArray = this.userData;
 
   for(let user of this.newArray) {
   if (signEmail == user["email"] && password == user["password"]) {

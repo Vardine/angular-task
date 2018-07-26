@@ -12,7 +12,7 @@ export class AuthService {
   }
 
     getArray() {
-    return this.http.get('./api.json');
+    return this.http.get('../assets/api.json');
   }
 
 
