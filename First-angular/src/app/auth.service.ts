@@ -10,10 +10,8 @@ export class AuthService {
   constructor(private http: HttpClient) {
 
   }
-
     getArray() {
     return this.http.get('https://first-angular-1f76e.firebaseio.com/.json');
   }
-
 
 }

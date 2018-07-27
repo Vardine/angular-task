@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import{ Router } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs';
+import 'rxjs/operator/timeout';
+
+
 
 @Component({
   selector: 'app-registration',
@@ -11,8 +16,11 @@ import { LoginComponent } from '../login/login.component';
 export class RegistrationComponent implements OnInit {
   newUser: any;
   newArray:any;
+  items: Observable<any[]>;
   userData;
-  constructor(private router: Router, private auth: AuthService ) {}
+  constructor(private router: Router, private auth: AuthService, public db: AngularFireDatabase) {
+   this.items = db.list('items').valueChanges();
+  }
   ngOnInit() {
    this.showArray();
   }
@@ -23,6 +31,7 @@ export class RegistrationComponent implements OnInit {
   }
 
 signUser(e){
+
   var firstName = e.target.elements[0].value;
   var lastName = e.target.elements[1].value;
   var signEmail = e.target.elements[2].value;
@@ -34,17 +43,23 @@ signUser(e){
     "email": signEmail,
     "password": password
   };
+  this.db.list('/').push(this.newUser);
+  this.newUser ;
 
-  this.userData.push(this.newUser);
+  this.showArray();
 
-  this.newArray = this.userData;
 
-  for(let user of this.newArray) {
-  if (signEmail == user["email"] && password == user["password"]) {
+
+   timeout(1000).subscribe(()=>{
+    Object.entries(this.userData).forEach(
+    ([key, val]) => {
+    if(signEmail == val["email"] && password == val["password"]) {
     this.router.navigate(['/admin']);
-    this.auth.login_array  = user;
+    this.auth.login_array  = val;
   }
 }
-}
+)});
 
+
+}
 }
