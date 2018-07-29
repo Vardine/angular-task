@@ -14,6 +14,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { environment } from '../environments/environment';
     AdminComponent,
     RegistrationComponent,
     NotFoundComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

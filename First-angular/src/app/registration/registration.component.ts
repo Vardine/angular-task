@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import{ Router } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
+import { HeaderComponent } from '../header/header.component';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
-import 'rxjs/operator/timeout';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 
@@ -18,7 +19,7 @@ export class RegistrationComponent implements OnInit {
   newArray:any;
   items: Observable<any[]>;
   userData;
-  constructor(private router: Router, private auth: AuthService, public db: AngularFireDatabase) {
+  constructor(private router: Router, private auth: AuthService, public db: AngularFireDatabase, private spinner: NgxSpinnerService) {
    this.items = db.list('items').valueChanges();
   }
   ngOnInit() {
@@ -31,7 +32,9 @@ export class RegistrationComponent implements OnInit {
   }
 
 signUser(e){
-
+  setTimeout(() => {
+      this.spinner.hide();
+  }, 1000);
   var firstName = e.target.elements[0].value;
   var lastName = e.target.elements[1].value;
   var signEmail = e.target.elements[2].value;
@@ -47,10 +50,10 @@ signUser(e){
   this.newUser ;
 
   this.showArray();
+  this.spinner.show();
 
 
-
-   timeout(1000).subscribe(()=>{
+   setTimeout(()=>{
     Object.entries(this.userData).forEach(
     ([key, val]) => {
     if(signEmail == val["email"] && password == val["password"]) {
@@ -58,7 +61,7 @@ signUser(e){
     this.auth.login_array  = val;
   }
 }
-)});
+)},1000);
 
 
 }

@@ -1,13 +1,10 @@
-.container{
-  width:982px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+form{
+  margin:100px auto;
+  max-width:500px;
 }
-input, button{
-  margin:5px 5px;
-}
-.sign_up{
-  display:flex;
-  justify-content:flex-end;
+
+.validation{
+  color:#007bff;
+  font-style: italic;
+  margin-bottom:10px;
 }

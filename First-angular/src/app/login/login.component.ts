@@ -3,7 +3,9 @@ import { AuthService } from '../auth.service';
 import{ Router } from '@angular/router';
 import { RegistrationComponent } from '../registration/registration.component';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -13,9 +15,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
   userData;
+  items: Observable<any[]>;
 
-  constructor(private router: Router, private auth: AuthService ) {
-
+  constructor(private router: Router, private auth: AuthService, public db: AngularFireDatabase ) {
+  this.items = db.list('items').valueChanges();
   }
   ngOnInit(){
     this.auth.getArray()
@@ -24,7 +27,7 @@ export class LoginComponent implements OnInit {
 
   }
 
-  loginUser(e){
+  loginUser(e) {
     var loggedEmail = e.target.elements[0].value;
     var password = e.target.elements[1].value;
 
