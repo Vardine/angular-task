@@ -9,6 +9,7 @@ import { AuthService } from '../auth.service';
 })
 export class KitchenComponent implements OnInit {
     title :string = "Kitchen";
+    photos;
   constructor(private auth:AuthService) { }
 
   ngOnInit() {
@@ -16,5 +17,5 @@ export class KitchenComponent implements OnInit {
       .subscribe(data => { this.photos = data}
       );
   }
-  
+
 }

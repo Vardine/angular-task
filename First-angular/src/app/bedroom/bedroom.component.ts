@@ -9,6 +9,7 @@ import { AuthService } from '../auth.service';
 })
 export class BedroomComponent implements OnInit {
   title :string = "Bedroom";
+  photos;
   constructor(private auth:AuthService) { }
 
   ngOnInit() {

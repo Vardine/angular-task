@@ -11,7 +11,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class BathroomComponent implements OnInit {
   title :string = "Bathroom";
   photos;
-  specificCategory: any;
   constructor(private auth: AuthService) { }
 
   ngOnInit() {

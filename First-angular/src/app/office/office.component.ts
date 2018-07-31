@@ -9,6 +9,7 @@ import { AuthService } from '../auth.service';
 })
 export class OfficeComponent implements OnInit {
     title :string = "Office";
+    photos;
   constructor(private auth:AuthService) { }
 
   ngOnInit() {
@@ -17,5 +18,3 @@ export class OfficeComponent implements OnInit {
       );
   }
   }
-
-}
