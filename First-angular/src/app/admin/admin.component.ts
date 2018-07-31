@@ -2,6 +2,15 @@ import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { LoginComponent } from '../login/login.component';
 import { RegistrationComponent } from '../registration/registration.component';
+import { OfficeComponent } from '../office/office.component';
+import { KitchenComponent } from '../kitchen/kitchen.component';
+import { BedroomComponent } from '../bedroom/bedroom.component';
+import { BathroomComponent } from '../bathroom/bathroom.component';
+import{ Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-admin',
@@ -12,14 +21,17 @@ export class AdminComponent implements OnInit {
   loginData: any ;
   firstName: any ;
   lastName: any ;
-  constructor( private auth: AuthService ) {
+  photos;
+  gallery: Observable<any[]>;
+  constructor( private auth: AuthService,private router: Router, public db: AngularFireDatabase ) {
       this.loginData = this.auth.login_array;
   }
 
   ngOnInit() {
     this.firstName =  this.loginData.firstName;
     this.lastName =  this.loginData.lastName;
+    this.auth.getImages()
+      .subscribe(data => { this.photos = data}
+      );
   }
-
-
 }

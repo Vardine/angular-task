@@ -1,0 +1,45 @@
+.bold{
+  text-transform: uppercase;
+  padding:10px;
+  color:black;
+}
+.bold:hover{
+  border-bottom:2px solid black;
+}
+
+.welcome{
+  text-align:center;
+  padding:50px;
+  font-size:32px;
+  text-transform: uppercase;
+}
+
+.main{
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+}
+.photos{
+  list-style:none;
+}
+
+.pt-5, .py-5{
+  padding-top:0 !important;
+}
+
+.sidebar{
+  max-width:300px;
+  text-transform: uppercase;
+}
+.sidebar a{
+  color:grey;
+  height:40px;
+  width:200px;
+}
+.sidebar a:hover{
+  background:black;
+  color:white;
+}
+.footer{
+  text-align:center;
+}

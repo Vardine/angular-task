@@ -1,4 +1,76 @@
 
-<div >
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <img src="assets/img/logo.jpg"/>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/Contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+</nav>
+<div class="container welcome">
    Welcome {{firstName}} {{lastName}}
 </div>
+
+
+     <div class="container">
+          <div class="main">
+       <nav class="col-md-2 d-none d-md-block sidebar">
+         <div class="sidebar-sticky">
+           <ul class="nav flex-column">
+             <li class="nav-item">
+               <a class="nav-link active" routerLink="/office">
+                 <span data-feather="home"></span>
+                 Office <span class="sr-only">(current)</span>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLink="/kitchen">
+                 <span data-feather="file"></span>
+                 Kitchen
+               </a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLink="/bedroom">
+                 <span data-feather="shopping-cart"></span>
+                 Bedroom
+               </a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLink="/bathroom">
+                 <span data-feather="users"></span>
+                 Bathroom
+               </a>
+             </li>
+           </ul>
+         </div>
+         </nav>
+           <div class="album py-5"  >
+                     <ul class="row" fxLayout="row"  >
+                       <li class="col-md-4 photos" *ngFor="let photo of photos" >
+                         <div class="card mb-4 shadow-sm">
+                           <img class="card-img-top" data-src="{{photo.imagesUrl}}" alt="Card image">
+                           <div class="card-body">
+                             <h6 class="card-title">{{photo.title}}</h6>
+                             <p class="card-text">{{photo.description}}</p>
+                           </div>
+                         </div>
+                       </li>
+                     </ul>
+            </div>
+        </div>
+    </div>
+
+<footer class="footer">
+    <div class="container">
+      <span class="text-muted">&#169;2018 by VarDy</span>
+    </div>
+</footer>

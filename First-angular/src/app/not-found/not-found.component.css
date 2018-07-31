@@ -1,0 +1,15 @@
+.not-found{
+  text-align:center;
+  margin-top:100px;
+}
+.not-found h1{
+  font-size:64px;
+}
+.not-found a{
+  text-decoration:none;
+  color:black;
+  font-size:24px;
+}
+.not-found a:hover{
+  color:blue;
+}

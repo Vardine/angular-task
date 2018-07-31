@@ -1,0 +1,74 @@
+[
+  {
+   "category":"Bathroom",
+   "title":"Towel",
+   "description":"50x80",
+   "imagesUrl":"assets/img/categories/bathroom/bathroom1.jpg"
+ },
+ {
+   "category":"Bathroom",
+   "title":"Set for bathroom",
+   "description":"3 units",
+   "imagesUrl":"assets/img/categories/bathroom/bathroom2.jpg"
+ },
+ {
+   "category":"Bedroom",
+   "title":"Pillow",
+   "description":"50x50",
+   "imagesUrl":"assets/img/categories/bedroom/bedroom1.jpg"
+ },
+ {
+   "category":"Bedroom",
+   "title":"Wardrobe",
+   "description":"100x150",
+   "imagesUrl":"assets/img/categories/bedroom/bedroom2.jpg"
+ },
+ {
+   "category":"Bedroom",
+   "title":"Bed",
+   "description":"Double",
+   "imagesUrl":"assets/img/categories/bedroom/bedroom3.jpg"
+ },
+ {
+   "category":"Kitchen",
+   "title":"Utilities",
+   "description":"4 units",
+   "imagesUrl":"assets/img/categories/kitchen/kitchen1.jpg"
+ },
+ {
+   "category":"Kitchen",
+   "title":"Fries maker",
+   "description":"Instant Pot",
+   "imagesUrl":"assets/img/categories/kitchen/kitchen2.jpg"
+ },
+ {
+   "category":"Kitchen",
+   "title":"Teapot",
+   "description":"500ml",
+   "imagesUrl":"assets/img/categories/kitchen/kitchen3.jpg"
+ },
+ {
+   "category":"Office",
+   "title":"Monitor Mac",
+   "description":"32",
+   "imagesUrl":"assets/img/categories/office/office1.jpg"
+ },
+ {
+   "category":"Office",
+   "title":"Laptop Dell",
+   "description":"15.6",
+   "imagesUrl":"assets/img/categories/office/office2.jpg"
+ },
+ {
+   "category":"Office",
+    "title":"Chair",
+    "description":"Ikea",
+    "imagesUrl":"assets/img/categories/office/office3.jpg"
+  },
+  {
+    "category":"Office",
+     "title":"Printer",
+     "description":"HP",
+     "imagesUrl":"assets/img/categories/office/office4.jpg"
+   }
+]

@@ -15,6 +15,11 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { HeaderComponent } from './header/header.component';
+import { OfficeComponent } from './office/office.component';
+import { BathroomComponent } from './bathroom/bathroom.component';
+import { BedroomComponent } from './bedroom/bedroom.component';
+import { KitchenComponent } from './kitchen/kitchen.component';
+import { Pipe, PipeTransform } from '@angular/core';
 
 
 @NgModule({
@@ -26,6 +31,10 @@ import { HeaderComponent } from './header/header.component';
     RegistrationComponent,
     NotFoundComponent,
     HeaderComponent,
+    OfficeComponent,
+    BathroomComponent,
+    BedroomComponent,
+    KitchenComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +45,7 @@ import { HeaderComponent } from './header/header.component';
     AngularFireDatabaseModule, // for database
     APP_ROUTES_PROVIDER
   ],
-  providers: [AuthService],
+  providers: [AuthService, Pipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

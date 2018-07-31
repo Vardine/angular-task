@@ -1,0 +1,20 @@
+
+<app-header></app-header>
+<div class="container">
+  <h2>{{title}}</h2>
+
+
+<div class="album py-5"  >
+          <ul class="row" fxLayout="row"  >
+            <li class="col-md-4 photos" *ngFor="let photo of photos">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" data-src="{{photo.imagesUrl}}" alt="Card image">
+                <div class="card-body">
+                  <h6 class="card-title">{{photo.title}}</h6>
+                  <p class="card-text">{{photo.description}}</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+ </div>
+ </div>
