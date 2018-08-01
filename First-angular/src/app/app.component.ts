@@ -15,6 +15,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class AppComponent {
   title = 'app';
+  changeButton = true;
 
   constructor(private spinner: NgxSpinnerService ) {}
 

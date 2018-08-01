@@ -20,6 +20,8 @@ import { BathroomComponent } from './bathroom/bathroom.component';
 import { BedroomComponent } from './bedroom/bedroom.component';
 import { KitchenComponent } from './kitchen/kitchen.component';
 import { Pipe, PipeTransform } from '@angular/core';
+import { FooterComponent } from './footer/footer.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { Pipe, PipeTransform } from '@angular/core';
     OfficeComponent,
     BathroomComponent,
     BedroomComponent,
-    KitchenComponent
+    KitchenComponent,
+    FooterComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

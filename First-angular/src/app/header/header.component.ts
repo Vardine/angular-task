@@ -6,10 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  text: string = 'Sign Up';
+  url:string = '/registration';
+  constructor() {
+    }
 
   ngOnInit() {
-  }
 
+  }
+  changeButton(): void {
+      if(this.text === 'Sign Up') {
+        this.url = '/';
+        this.text= 'Log in';
+        }
+      else{
+        this.text = 'Sign Up';
+        this.url = '/registration';
+      }
+    }
 }

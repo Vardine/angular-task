@@ -26,20 +26,3 @@
 .pt-5, .py-5{
   padding-top:0 !important;
 }
-
-.sidebar{
-  max-width:300px;
-  text-transform: uppercase;
-}
-.sidebar a{
-  color:grey;
-  height:40px;
-  width:200px;
-}
-.sidebar a:hover{
-  background:black;
-  color:white;
-}
-.footer{
-  text-align:center;
-}
