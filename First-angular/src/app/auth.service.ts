@@ -19,5 +19,17 @@ export class AuthService {
   getImages() {
     return this.http.get('assets/images.json');
 }
+getBathroom() {
+  return this.http.get('assets/bathroom.json');
+}
+getBedroom() {
+  return this.http.get('assets/bedroom.json');
+}
+getKitchen() {
+  return this.http.get('assets/kitchen.json');
+}
+getOffice() {
+  return this.http.get('assets/office.json');
+}
 
 }

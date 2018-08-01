@@ -13,7 +13,7 @@ export class BedroomComponent implements OnInit {
   constructor(private auth:AuthService) { }
 
   ngOnInit() {
-    this.auth.getImages()
+    this.auth.getBedroom()
       .subscribe(data => { this.photos = data}
       );
   }

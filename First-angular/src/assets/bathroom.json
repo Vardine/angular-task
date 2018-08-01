@@ -1,0 +1,14 @@
+[
+  {
+   "category":"Bathroom",
+   "title":"Towel",
+   "description":"50x80",
+   "imagesUrl":"assets/img/categories/bathroom/bathroom1.jpg"
+ },
+ {
+   "category":"Bathroom",
+   "title":"Set for bathroom",
+   "description":"3 units",
+   "imagesUrl":"assets/img/categories/bathroom/bathroom2.jpg"
+ }
+]

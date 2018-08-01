@@ -13,7 +13,7 @@ export class KitchenComponent implements OnInit {
   constructor(private auth:AuthService) { }
 
   ngOnInit() {
-    this.auth.getImages()
+    this.auth.getKitchen()
       .subscribe(data => { this.photos = data}
       );
   }

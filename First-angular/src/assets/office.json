@@ -1,0 +1,24 @@
+[{
+  "category":"Office",
+  "title":"Monitor Mac",
+  "description":"32",
+  "imagesUrl":"assets/img/categories/office/office1.jpg"
+},
+{
+  "category":"Office",
+  "title":"Laptop Dell",
+  "description":"15.6",
+  "imagesUrl":"assets/img/categories/office/office2.jpg"
+},
+{
+  "category":"Office",
+   "title":"Chair",
+   "description":"Ikea",
+   "imagesUrl":"assets/img/categories/office/office3.jpg"
+ },
+ {
+   "category":"Office",
+    "title":"Printer",
+    "description":"HP",
+    "imagesUrl":"assets/img/categories/office/office4.jpg"
+  }]

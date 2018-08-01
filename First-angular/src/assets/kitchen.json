@@ -1,0 +1,18 @@
+[{
+  "category":"Kitchen",
+  "title":"Utilities",
+  "description":"4 units",
+  "imagesUrl":"assets/img/categories/kitchen/kitchen1.jpg"
+},
+{
+  "category":"Kitchen",
+  "title":"Fries maker",
+  "description":"Instant Pot",
+  "imagesUrl":"assets/img/categories/kitchen/kitchen2.jpg"
+},
+{
+  "category":"Kitchen",
+  "title":"Teapot",
+  "description":"500ml",
+  "imagesUrl":"assets/img/categories/kitchen/kitchen3.jpg"
+}]

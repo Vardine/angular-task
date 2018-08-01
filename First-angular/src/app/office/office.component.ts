@@ -13,7 +13,7 @@ export class OfficeComponent implements OnInit {
   constructor(private auth:AuthService) { }
 
   ngOnInit() {
-    this.auth.getImages()
+    this.auth.getOffice()
       .subscribe(data => { this.photos = data}
       );
   }

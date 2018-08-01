@@ -1,0 +1,18 @@
+[{
+  "category":"Bedroom",
+  "title":"Pillow",
+  "description":"50x50",
+  "imagesUrl":"assets/img/categories/bedroom/bedroom1.jpg"
+},
+{
+  "category":"Bedroom",
+  "title":"Wardrobe",
+  "description":"100x150",
+  "imagesUrl":"assets/img/categories/bedroom/bedroom2.jpg"
+},
+{
+  "category":"Bedroom",
+  "title":"Bed",
+  "description":"Double",
+  "imagesUrl":"assets/img/categories/bedroom/bedroom3.jpg"
+}]
