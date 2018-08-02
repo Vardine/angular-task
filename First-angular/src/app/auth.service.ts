@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Response } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { SignComponent } from './sign/sign.component';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,9 @@ import 'rxjs/add/operator/map';
 export class AuthService {
     login_array ;
     gallery;
-
+    text = 'Sign Up';
+    url = '/registration';
+    hideButton = true;
   constructor(private http: HttpClient) {
 
   }
@@ -30,6 +33,15 @@ getKitchen() {
 }
 getOffice() {
   return this.http.get('assets/office.json');
+}
+
+changeText(){
+  this.text = "Log in";
+  this.url = '/';
+  this.hideButton = true;
+}
+changeText2(){
+  this.hideButton = false;
 }
 
 }

@@ -19,7 +19,6 @@ export class RegistrationComponent implements OnInit {
   newUser: any;
   newArray:any;
   items: Observable<any[]>;
-  newText: string = "Log In";
   userData;
   constructor(private router: Router, private auth: AuthService, public db: AngularFireDatabase, private spinner: NgxSpinnerService) {
    this.items = db.list('items').valueChanges();

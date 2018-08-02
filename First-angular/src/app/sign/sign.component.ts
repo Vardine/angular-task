@@ -1,5 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { RegistrationComponent } from '../registration/registration.component';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-sign',
@@ -8,22 +9,29 @@ import { RegistrationComponent } from '../registration/registration.component';
 })
 
 export class SignComponent implements OnInit {
-  text: string = 'Sign Up';
-  url:string = '/registration';
+  signText:string;
+  signUrl:string;
+  hide: boolean ;
 
-  constructor() { }
+  constructor(private auth: AuthService) { }
+
 
   ngOnInit() {
+    this.signText = this.auth.text;
+    this.signUrl = this.auth.url;
+    this.hide = this.auth.hideButton;
+    this.auth.changeText();
+    this.auth.changeText2();
   }
+changeButton(){
+  if(this.signUrl == '/registration' && this.signText== 'Sign Up'){
+  this.auth.changeText();
+}
 
-  changeButton(): void {
-      if(this.text === 'Sign Up') {
-        this.url= "/"
-        this.text= 'Log in';
-        }
-      else{
-        this.text = 'Sign Up';
+  else{
+    this.auth.changeText2();
+  }
+}
 
-      }
-    }
+
 }
