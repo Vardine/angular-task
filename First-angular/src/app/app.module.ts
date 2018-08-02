@@ -22,6 +22,7 @@ import { KitchenComponent } from './kitchen/kitchen.component';
 import { Pipe, PipeTransform } from '@angular/core';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { SignComponent } from './sign/sign.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     BedroomComponent,
     KitchenComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    SignComponent
   ],
   imports: [
     BrowserModule,

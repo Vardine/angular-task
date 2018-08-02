@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input, HostListener  } from '@angular/core';
 import { AuthService } from '../auth.service';
 import{ Router } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
@@ -6,7 +6,8 @@ import { HeaderComponent } from '../header/header.component';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
 import { NgxSpinnerService } from 'ngx-spinner';
-
+import { SignComponent } from '../sign/sign.component';
+import { Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class RegistrationComponent implements OnInit {
   newUser: any;
   newArray:any;
   items: Observable<any[]>;
+  newText: string = "Log In";
   userData;
   constructor(private router: Router, private auth: AuthService, public db: AngularFireDatabase, private spinner: NgxSpinnerService) {
    this.items = db.list('items').valueChanges();
@@ -62,7 +64,6 @@ signUser(e){
   }
 }
 )},1000);
-
-
 }
+
 }
