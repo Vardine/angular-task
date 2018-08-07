@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div class="container">
+<h2>Task List</h2>
+  <div class="main">
+<app-sidebar></app-sidebar>
+         <div class="table-responsive">
+           <table class="table table-striped table-sm">
+             <thead>
+               <tr>
+                 <th>User FirstName</th>
+                 <th>User Email</th>
+                 <th>Task Name</th>
+                 <th>Task Duration</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr *ngFor="let user of selected_user">
+                 <td>{{user.firstname}}</td>
+                 <td>{{user.user}}</td>
+                 <td>{{user.task}}</td>
+                 <td>{{user.duration}}</td>
+               </tr>
+             </tbody>
+           </table>
+           <p  *ngIf="showMassege">Please add a task!</p>     
+         </div>
+  </div>
+
+</div>

@@ -45,7 +45,8 @@ signUser(e){
     "firstName": firstName,
     "lastName": lastName,
     "email": signEmail,
-    "password": password
+    "password": password,
+    "job": []
   };
   this.db.list('/').push(this.newUser);
   this.newUser ;
@@ -60,6 +61,8 @@ signUser(e){
     if(signEmail == val["email"] && password == val["password"]) {
     this.router.navigate(['/admin']);
     this.auth.login_array  = val;
+    this.auth.logged_user  = signEmail;
+    this.auth.logged_firstname = val["firstName"];
   }
 }
 )},1000);

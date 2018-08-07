@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  logged_users;
+  taskList;
+  x = [];
+  items: Observable<any[]>;
+  constructor(private auth: AuthService, public db: AngularFireDatabase) {
+    this.logged_users = this.auth.logged_user;
+    this.items = db.list('items').valueChanges(); }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+      this.auth.getArray()
+        .subscribe(data => this.taskList = data
+        );
+    }
 
+      showTasks() {
+      Object.entries(this.taskList).forEach(
+      ([key, val]) => {
+      if(val["user"] == this.logged_users) {
+      this.x.push(val);
+      this.auth.job_element= this.x;
+
+      }
+    });}
 }

@@ -1,0 +1,31 @@
+<div class="container" >
+<div class="topModal">
+<h2 mat-dialog-title>{{modalTitle}}</h2>
+<i (click)="closeModal()" class="material-icons">
+cancel
+</i>
+</div>
+<mat-form-field class="example-user-input">
+  <mat-select [(ngModel)]="selectedOptions" (ngModelChange) = "getTask(selectedOptions)"  class="form-control"  [formControl]="task">
+    <mat-option  class="dropdown"  *ngFor="let taskOption of taskOptions" [value]="taskOption">
+      {{taskOption}}
+    </mat-option>
+  </mat-select>
+  </mat-form-field>
+  <mat-form-field class="example-user-input">
+  <mat-select [(ngModel)]="selectedOptions1" (ngModelChange) = "getDuration(selectedOptions1)"  class="form-control"  [formControl]="duration">
+    <mat-option *ngFor="let durationOption of durationOptions" [value]="durationOption">
+      {{durationOption}}
+    </mat-option>
+  </mat-select>
+  </mat-form-field>
+  <p>
+      Selected Task: {{task.value}}
+    </p>
+    <p>
+        Selected Duration: {{duration.value}}
+    </p>
+<mat-dialog-actions class="taskButton">
+ <button type="submit" (click) = "selectedProject($event)" mat-raised-button color="warn" mat-button [mat-dialog-close]='true'>Add Task</button>
+</mat-dialog-actions>
+</div>

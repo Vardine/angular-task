@@ -4,11 +4,15 @@ import { Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { SignComponent } from './sign/sign.component';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
     login_array ;
+    logged_user;
+    logged_firstname;
+    job_element = [];
     gallery;
     text = 'Sign Up';
     url = '/registration';
@@ -43,5 +47,10 @@ changeText(){
 changeText2(){
   this.hideButton = false;
 }
+
+getTasks() {
+  return this.http.get('assets/tasks.json');
+}
+
 
 }

@@ -2,17 +2,21 @@
    "firstName":"Vardi",
    "lastName":"Hayrapetyan",
    "email":"vardi.hayrapetyan@gmail.com",
-   "password":"123456"
+   "password":"111111",
+   "job":[]
+
  },
  {
    "firstName":"Hamlet",
    "lastName":"Hayrapetyan",
    "email":"ham_hay@gmail.com",
-   "password":"565789"
+   "password":"555555",
+   "job":[]
  },
  {
    "firstName":"Mariam",
    "lastName":"Atabekyan",
    "email":"mar85@gmail.com",
-   "password":"159753"
+   "password":"666666",
+   "job":[]
  }]

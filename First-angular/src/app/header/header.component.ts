@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject } from '@angular/core';
 import { SignComponent } from '../sign/sign.component';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material';
+import { ModalComponent } from '../modal/modal.component';
+import{ Router } from '@angular/router';
+import {LocationStrategy} from '@angular/common';
+
 
 @Component({
   selector: 'app-header',
@@ -7,10 +12,33 @@ import { SignComponent } from '../sign/sign.component';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  constructor() {
+  addButton:boolean;
+  constructor(public dialog: MatDialog, private router: Router, public url:LocationStrategy) {
     }
 
   ngOnInit() {
+    if(this.url.path()==='/' || this.url.path()==='/registration'  ){
+
+      this.addButton = false;
+      }
+      else{
+        this.addButton = true;
+      }
   }
+
+
+  openModal() {
+ const dialogConfig = new MatDialogConfig();
+dialogConfig.disableClose = true;
+ dialogConfig.autoFocus = true;
+ dialogConfig.data = {
+ title: 'Add a Task'
+ };
+const dialogRef = this.dialog.open(ModalComponent, dialogConfig);
+
+/*dialogRef.afterClosed().subscribe(result => {
+ this.router.navigate(['/tasks']);
+});*/
+ }
 
 }

@@ -19,10 +19,17 @@ import { OfficeComponent } from './office/office.component';
 import { BathroomComponent } from './bathroom/bathroom.component';
 import { BedroomComponent } from './bedroom/bedroom.component';
 import { KitchenComponent } from './kitchen/kitchen.component';
-import { Pipe, PipeTransform } from '@angular/core';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SignComponent } from './sign/sign.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatDialogModule, MatSelectModule } from '@angular/material';
+import { ModalComponent } from './modal/modal.component';
+import {ReactiveFormsModule } from '@angular/forms';
+import { TasksComponent } from './tasks/tasks.component';
+
+
 
 
 @NgModule({
@@ -40,8 +47,13 @@ import { SignComponent } from './sign/sign.component';
     KitchenComponent,
     FooterComponent,
     SidebarComponent,
-    SignComponent
+    SignComponent,
+    ModalComponent,
+    TasksComponent
   ],
+  entryComponents: [
+  ModalComponent
+],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -49,9 +61,16 @@ import { SignComponent } from './sign/sign.component';
     NgxSpinnerModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule, // for database
-    APP_ROUTES_PROVIDER
+    APP_ROUTES_PROVIDER,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    MatButtonModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatSelectModule
+
   ],
-  providers: [AuthService, Pipe],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

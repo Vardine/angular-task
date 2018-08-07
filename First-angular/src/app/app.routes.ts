@@ -10,6 +10,7 @@ import { OfficeComponent } from './office/office.component';
 import { KitchenComponent } from './kitchen/kitchen.component';
 import { BedroomComponent } from './bedroom/bedroom.component';
 import { BathroomComponent } from './bathroom/bathroom.component';
+import { TasksComponent } from './tasks/tasks.component';
 
 
 
@@ -36,6 +37,10 @@ component:BathroomComponent
 {
   path:'kitchen',
 component:KitchenComponent
+},
+{
+  path:'tasks',
+component:TasksComponent
 },
   {
     path:'',

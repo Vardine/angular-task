@@ -9,20 +9,26 @@
       </li>
       <li class="nav-item ">
         <a class="nav-link" routerLink="/kitchen" routerLinkActive="active" >
-          <span data-feather="file"></span>
+          <span data-feather="kitchen"></span>
           Kitchen
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/bedroom" routerLinkActive="active" >
-          <span data-feather="shopping-cart"></span>
+          <span data-feather="bedroom"></span>
           Bedroom
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/bathroom" routerLinkActive="active" >
-          <span data-feather="users"></span>
+          <span data-feather="bathroom"></span>
           Bathroom
+        </a>
+      </li>
+      <li class="nav-item">
+        <a (click)="showTasks()" class="nav-link" routerLink="/tasks" routerLinkActive="active" >
+          <span data-feather="tasks"></span>
+          Tasks
         </a>
       </li>
     </ul>

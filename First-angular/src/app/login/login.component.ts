@@ -35,6 +35,8 @@ export class LoginComponent implements OnInit {
     if(loggedEmail == val["email"] && password == val["password"]){
       this.router.navigate(['/admin']);
       this.auth.login_array  = val;
+      this.auth.logged_user  = loggedEmail;
+      this.auth.logged_firstname = val["firstName"];
     }
 });
 }
