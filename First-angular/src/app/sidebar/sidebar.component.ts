@@ -12,10 +12,10 @@ export class SidebarComponent implements OnInit {
 
   logged_users;
   taskList;
-  x = [];
+  z = [];
   items: Observable<any[]>;
   constructor(private auth: AuthService, public db: AngularFireDatabase) {
-    this.logged_users = this.auth.logged_user;
+    this.logged_users = JSON.parse(localStorage.getItem('email'));
     this.items = db.list('items').valueChanges(); }
 
     ngOnInit() {
@@ -24,12 +24,12 @@ export class SidebarComponent implements OnInit {
         );
     }
 
-      showTasks() {
+      showTasks(){
       Object.entries(this.taskList).forEach(
       ([key, val]) => {
       if(val["user"] == this.logged_users) {
-      this.x.push(val);
-      this.auth.job_element= this.x;
+      this.z.push(val);
+      this.auth.job_element= this.z;
 
       }
     });}

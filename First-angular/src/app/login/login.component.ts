@@ -16,6 +16,7 @@ import { Observable } from 'rxjs';
 export class LoginComponent implements OnInit {
   userData;
   items: Observable<any[]>;
+  loginData:any;
 
   constructor(private router: Router, private auth: AuthService, public db: AngularFireDatabase ) {
   this.items = db.list('items').valueChanges();
@@ -25,11 +26,14 @@ export class LoginComponent implements OnInit {
       .subscribe(data => { this.userData = data}
       );
 
+
+
   }
 
   loginUser(e) {
     var loggedEmail = e.target.elements[0].value;
     var password = e.target.elements[1].value;
+
 
     Object.entries(this.userData).forEach(([key, val]) => {
     if(loggedEmail == val["email"] && password == val["password"]){
@@ -37,7 +41,12 @@ export class LoginComponent implements OnInit {
       this.auth.login_array  = val;
       this.auth.logged_user  = loggedEmail;
       this.auth.logged_firstname = val["firstName"];
+      localStorage.setItem('name', JSON.stringify(this.auth.logged_firstname));
+      localStorage.setItem('email', JSON.stringify(this.auth.logged_user));
+      localStorage.setItem('lastName',JSON.stringify(val["lastName"]));
     }
 });
+
 }
+
 }

@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { SignComponent } from './sign/sign.component';
 
+const STORAGE_KEY = 'local_todolist';
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +18,11 @@ export class AuthService {
     text = 'Sign Up';
     url = '/registration';
     hideButton = true;
+
   constructor(private http: HttpClient) {
 
   }
+
     getArray() {
     return this.http.get('https://first-angular-1f76e.firebaseio.com/.json');
   }

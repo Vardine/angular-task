@@ -21,17 +21,30 @@ export class AdminComponent implements OnInit {
   loginData: any ;
   firstName: any ;
   lastName: any ;
+
   photos;
   gallery: Observable<any[]>;
   constructor( private auth: AuthService,private router: Router, public db: AngularFireDatabase ) {
-      this.loginData = this.auth.login_array;
+     this.loginData = this.auth.login_array;
+
+
   }
 
   ngOnInit() {
-    this.firstName =  this.loginData.firstName;
-    this.lastName =  this.loginData.lastName;
+
+
+
+
+    this.firstName =  JSON.parse(localStorage.getItem('name'));
+    this.lastName =  JSON.parse(localStorage.getItem('lastName'));
+
     this.auth.getImages()
       .subscribe(data => { this.photos = data}
       );
   }
+
+
+
+
+
 }
