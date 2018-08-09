@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener  } from '@angular/core';
 import { AuthService } from '../auth.service';
 import{ Router } from '@angular/router';
 import { RegistrationComponent } from '../registration/registration.component';
@@ -17,7 +17,6 @@ export class LoginComponent implements OnInit {
   userData;
   items: Observable<any[]>;
   loginData:any;
-
   constructor(private router: Router, private auth: AuthService, public db: AngularFireDatabase ) {
   this.items = db.list('items').valueChanges();
   }
@@ -25,15 +24,13 @@ export class LoginComponent implements OnInit {
     this.auth.getArray()
       .subscribe(data => { this.userData = data}
       );
-
-
-
   }
 
   loginUser(e) {
     var loggedEmail = e.target.elements[0].value;
     var password = e.target.elements[1].value;
 
+    this.auth.changeText1();
 
     Object.entries(this.userData).forEach(([key, val]) => {
     if(loggedEmail == val["email"] && password == val["password"]){
@@ -48,5 +45,10 @@ export class LoginComponent implements OnInit {
 });
 
 }
+@HostListener("window:beforeunload",["$event"])
+    clearLocalStorage(event){
+        localStorage.clear();
+    }
+
 
 }

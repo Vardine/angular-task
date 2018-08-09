@@ -30,6 +30,7 @@ export class SidebarComponent implements OnInit {
       if(val["user"] == this.logged_users) {
       this.z.push(val);
       this.auth.job_element= this.z;
+      localStorage.setItem('tasks', JSON.stringify(this.auth.job_element));
 
       }
     });}

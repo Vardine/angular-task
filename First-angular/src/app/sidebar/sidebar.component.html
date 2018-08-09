@@ -3,31 +3,32 @@
     <ul class="nav flex-column">
       <li class="nav-item">
         <a class="nav-link" routerLink="/office"  routerLinkActive="active" >
-          <span data-feather="office"></span>
+          <fa [name]="'briefcase'"></fa>
           Office <span class="sr-only">(current)</span>
         </a>
       </li>
       <li class="nav-item ">
         <a class="nav-link" routerLink="/kitchen" routerLinkActive="active" >
-          <span data-feather="kitchen"></span>
+          <fa [name]="'cutlery'"></fa>
+
           Kitchen
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/bedroom" routerLinkActive="active" >
-          <span data-feather="bedroom"></span>
+          <fa [name]="'bed'"></fa>
           Bedroom
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/bathroom" routerLinkActive="active" >
-          <span data-feather="eye"></span>
+          <fa [name]="'bath'"></fa>
           Bathroom
         </a>
       </li>
       <li class="nav-item">
         <a (click)="showTasks()" class="nav-link" routerLink="/tasks" routerLinkActive="active" >
-          <span data-feather="tasks"></span>
+          <fa [name]="'tasks'"></fa>
           Tasks
         </a>
       </li>

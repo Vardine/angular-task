@@ -13,7 +13,7 @@ export class TasksComponent implements OnInit {
 selected_user: any;
 showMassege :any;
   constructor(private auth: AuthService, public db: AngularFireDatabase) {
-    this.selected_user = this.auth.job_element;
+    this.selected_user = JSON.parse(localStorage.getItem('tasks'));
   }
 
   ngOnInit() {

@@ -22,6 +22,7 @@ export class SignComponent implements OnInit {
     this.hide = this.auth.hideButton;
     this.auth.changeText();
     this.auth.changeText2();
+
   }
 changeButton(){
   if(this.signUrl == '/registration' && this.signText== 'Sign Up'){

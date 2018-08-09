@@ -23,10 +23,10 @@ export class AuthService {
 
   }
 
-    getArray() {
+  getArray() {
     return this.http.get('https://first-angular-1f76e.firebaseio.com/.json');
   }
-  getImages() {
+getImages() {
     return this.http.get('assets/images.json');
 }
 getBathroom() {
@@ -47,13 +47,19 @@ changeText(){
   this.url = '/';
   this.hideButton = true;
 }
+changeText1(){
+  this.text = "Log out";
+  this.url = '/';
+  this.hideButton = true;
+}
+
 changeText2(){
+
   this.hideButton = false;
 }
 
 getTasks() {
   return this.http.get('assets/tasks.json');
 }
-
 
 }

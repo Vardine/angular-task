@@ -28,6 +28,7 @@ import { MatButtonModule, MatDialogModule, MatSelectModule } from '@angular/mate
 import { ModalComponent } from './modal/modal.component';
 import {ReactiveFormsModule } from '@angular/forms';
 import { TasksComponent } from './tasks/tasks.component';
+import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome'
 
 
 
@@ -67,7 +68,8 @@ import { TasksComponent } from './tasks/tasks.component';
     MatButtonModule,
     MatDialogModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    Angular2FontawesomeModule
 
   ],
   providers: [AuthService],

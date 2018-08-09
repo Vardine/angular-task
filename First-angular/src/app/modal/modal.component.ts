@@ -29,9 +29,8 @@ export class ModalComponent implements OnInit {
   constructor (@Inject(MAT_DIALOG_DATA) public data: any, private auth: AuthService, private matdialogref:MatDialogRef<ModalComponent>,public db: AngularFireDatabase ) {
     this.modalTitle = data.title;
     this.items = db.list('items').valueChanges();
-    this.logged_users = this.auth.logged_user;
-    this.logged_firstnames = this.auth.logged_firstname;
-    console.log(this.logged_firstnames);
+    this.logged_users = JSON.parse(localStorage.getItem('email'));
+    this.logged_firstnames = JSON.parse(localStorage.getItem('name'));
   }
 
 
