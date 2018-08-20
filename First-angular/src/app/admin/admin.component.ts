@@ -31,13 +31,9 @@ export class AdminComponent implements OnInit {
   }
 
   ngOnInit() {
-
-
-
-
     this.firstName =  JSON.parse(localStorage.getItem('name'));
     this.lastName =  JSON.parse(localStorage.getItem('lastName'));
-
+    this.auth.changeText1();
     this.auth.getImages()
       .subscribe(data => { this.photos = data}
       );

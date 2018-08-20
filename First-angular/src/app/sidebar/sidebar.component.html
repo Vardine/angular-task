@@ -2,9 +2,15 @@
   <div class="sidebar-sticky">
     <ul class="nav flex-column">
       <li class="nav-item">
+        <a class="nav-link" routerLink="/admin"  routerLinkActive="active" >
+          <fa [name]="'home'"></fa>
+          Home <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" routerLink="/office"  routerLinkActive="active" >
           <fa [name]="'briefcase'"></fa>
-          Office <span class="sr-only">(current)</span>
+          Office <span class="sr-only"></span>
         </a>
       </li>
       <li class="nav-item ">

@@ -17,6 +17,8 @@ export class ModalComponent implements OnInit {
   items: Observable<any[]>;
   newTask:any;
   taskList:any;
+  updateButton:boolean;
+  addtaskButton:boolean;
   selectedTask;
   selectedDuration;
   logged_users;
@@ -38,6 +40,8 @@ export class ModalComponent implements OnInit {
     this.auth.getArray()
       .subscribe(data => this.taskList = data
       );
+      this.updateButton = this.auth.noUpdate;
+      this.addtaskButton = this.auth.noAddTask;
   }
 
 
@@ -75,6 +79,7 @@ selectedProject(e){
       "task": this.selectedTask,
       "duration": this.selectedDuration
       });
+      console.log(this.auth.task_row['task']);
   }
  }
  )

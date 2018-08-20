@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
     this.auth.getArray()
       .subscribe(data => { this.userData = data}
       );
+      this.auth.changeText3();
   }
 
   loginUser(e) {

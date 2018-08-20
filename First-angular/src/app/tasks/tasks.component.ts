@@ -49,8 +49,8 @@ this.auth.getArray()
 )
  }
  editItem(user){
-
-
+this.auth.showUpdateButton();
+this.auth.noTaskButton();
   const dialogConfig = new MatDialogConfig();
   dialogConfig.disableClose = true;
   dialogConfig.autoFocus = true;
@@ -64,6 +64,7 @@ this.auth.getArray()
   });*/
 
   this.auth.task_row=user;
+
  }
 
 

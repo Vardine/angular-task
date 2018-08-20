@@ -21,6 +21,8 @@ export class AuthService {
     text = 'Sign Up';
     url = '/registration';
     hideButton = true;
+    noUpdate = true;
+    noAddTask = true;
 
   constructor(private http: HttpClient) {
 
@@ -59,6 +61,26 @@ changeText1(){
 changeText2(){
 
   this.hideButton = false;
+}
+changeText3(){
+
+  this.text = "Sign Up";
+  this.url = '/registration';
+  this.hideButton = true;
+}
+noUpdateButton(){
+  this.noUpdate = false;
+}
+showUpdateButton(){
+  this.noUpdate = true;
+}
+
+noTaskButton(){
+  this.noAddTask = false;
+}
+
+showTaskButton(){
+  this.noAddTask = true;
 }
 
 getTasks() {

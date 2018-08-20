@@ -4,6 +4,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig } from '@angul
 import { ModalComponent } from '../modal/modal.component';
 import{ Router } from '@angular/router';
 import {LocationStrategy} from '@angular/common';
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ import {LocationStrategy} from '@angular/common';
 })
 export class HeaderComponent implements OnInit {
   addButton:boolean;
-  constructor(public dialog: MatDialog, private router: Router, public url:LocationStrategy) {
+  constructor(public dialog: MatDialog, private router: Router, public url:LocationStrategy, private auth: AuthService) {
     }
 
   ngOnInit() {
@@ -24,6 +25,7 @@ export class HeaderComponent implements OnInit {
       else{
         this.addButton = true;
       }
+
   }
 
 
@@ -39,6 +41,8 @@ const dialogRef = this.dialog.open(ModalComponent, dialogConfig);
 /*dialogRef.afterClosed().subscribe(result => {
  this.router.navigate(['/tasks']);
 });*/
+this.auth.noUpdateButton();
+this.auth.showTaskButton();
  }
 
 }

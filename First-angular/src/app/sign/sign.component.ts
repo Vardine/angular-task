@@ -28,7 +28,6 @@ changeButton(){
   if(this.signUrl == '/registration' && this.signText== 'Sign Up'){
   this.auth.changeText();
 }
-
   else{
     this.auth.changeText2();
   }
