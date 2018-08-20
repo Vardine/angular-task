@@ -27,6 +27,6 @@ cancel
     </p>
 <mat-dialog-actions class="taskButton">
  <button *ngIf="addtaskButton" type="submit" (click) = "selectedProject($event)" mat-raised-button color="warn" mat-button [mat-dialog-close]='true'>Add Task</button>
- <button *ngIf="updateButton" type="submit" (click) = "updateProject($event)" mat-raised-button color="sucess" mat-button [mat-dialog-close]='true'>Update Task</button>
+ <button *ngIf="updateButton" type="submit" (click) = "updateProject($event)" mat-raised-button color="primary" mat-button [mat-dialog-close]='true'>Update Task</button>
 </mat-dialog-actions>
 </div>

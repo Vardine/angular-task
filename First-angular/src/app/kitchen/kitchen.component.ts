@@ -17,6 +17,7 @@ export class KitchenComponent implements OnInit {
     this.auth.getKitchen()
       .subscribe(data => { this.photos = data}
       );
+      this.auth.changeText1();
   }
 
 }

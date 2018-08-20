@@ -16,5 +16,6 @@ export class OfficeComponent implements OnInit {
     this.auth.getOffice()
       .subscribe(data => { this.photos = data}
       );
+      this.auth.changeText1();
   }
   }

@@ -16,6 +16,7 @@ export class BedroomComponent implements OnInit {
     this.auth.getBedroom()
       .subscribe(data => { this.photos = data}
       );
+      this.auth.changeText1();
   }
 
 }

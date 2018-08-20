@@ -19,6 +19,7 @@ export class BathroomComponent implements OnInit {
     this.auth.getBathroom()
       .subscribe(data => { this.photos = data}
       );
+      this.auth.changeText1();
   }
 
 }

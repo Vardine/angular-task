@@ -25,12 +25,12 @@ userData;
 
   ngOnInit() {
 
-// this.db.ref('/').child("LK6Zc-7DeZZWaDMijkR").remove();
+
 
 this.auth.getArray()
   .subscribe(data => this.userData = data
   );
-
+this.auth.changeText1();
     if (Object.keys(this.selected_user).length == 0 ){
 
       this.showMassege = true;
