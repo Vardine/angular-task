@@ -1,0 +1,14 @@
+<app-header></app-header>
+<div class="container">
+  <h2>{{title}}</h2>
+  <div class="my-3 p-3 bg-white rounded shadow-sm" *ngFor="let contactOption of contactOptions">
+        <div class="media text-muted pt-3"  >
+
+          <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray" >
+            <strong class="d-block text-gray-dark"> {{contactOption}} </strong>
+            {{contactOption}}
+          </p>
+        </div>
+</div>
+</div>
+   <app-footer></app-footer>

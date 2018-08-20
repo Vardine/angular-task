@@ -19,6 +19,8 @@
                  <td>{{user.user}}</td>
                  <td>{{user.task}}</td>
                  <td>{{user.duration}}</td>
+                 <td><button class="pull-right btn btn-sm btn-warning" id="remove" (click)="deleteRow(user)" > Delete</button></td>
+                 <td><button class="pull-right btn btn-sm btn-success" (click)="editItem(user)">Edit</button></td>
                </tr>
              </tbody>
            </table>

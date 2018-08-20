@@ -11,6 +11,8 @@ import { KitchenComponent } from './kitchen/kitchen.component';
 import { BedroomComponent } from './bedroom/bedroom.component';
 import { BathroomComponent } from './bathroom/bathroom.component';
 import { TasksComponent } from './tasks/tasks.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 
@@ -21,6 +23,14 @@ const APP_ROUTES: Routes = [{
   {
     path:'registration',
   component:RegistrationComponent
+},
+{
+  path:'about',
+component:AboutComponent
+},
+{
+  path:'contact',
+component:ContactComponent
 },
 {
   path:'office',

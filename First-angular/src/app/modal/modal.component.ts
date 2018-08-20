@@ -64,6 +64,21 @@ selectedProject(e){
   this.db.list('/').push(this.newTask);
 
   }
+  updateProject(e){
+    Object.entries(this.taskList).forEach(
+    ([key, val]) => {
+    if(this.auth.task_row['task'] == val['task'] && this.auth.task_row['duration'] == val['duration'] && this.auth.task_row['user']==this.logged_users ) {
+    this.db.list('/').update(key,
+      {
+        "firstname":this.logged_firstnames,
+      "user": this.logged_users,
+      "task": this.selectedTask,
+      "duration": this.selectedDuration
+      });
+  }
+ }
+ )
 
+    }
 
 }

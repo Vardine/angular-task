@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { SignComponent } from './sign/sign.component';
+import { AngularFireDatabase} from 'angularfire2/database';
 
 const STORAGE_KEY = 'local_todolist';
 
@@ -10,9 +11,11 @@ const STORAGE_KEY = 'local_todolist';
   providedIn: 'root'
 })
 export class AuthService {
+
     login_array ;
     logged_user;
     logged_firstname;
+    task_row;
     job_element = [];
     gallery;
     text = 'Sign Up';
@@ -22,10 +25,10 @@ export class AuthService {
   constructor(private http: HttpClient) {
 
   }
-
   getArray() {
     return this.http.get('https://first-angular-1f76e.firebaseio.com/.json');
   }
+
 getImages() {
     return this.http.get('assets/images.json');
 }

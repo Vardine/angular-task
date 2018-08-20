@@ -28,7 +28,9 @@ import { MatButtonModule, MatDialogModule, MatSelectModule } from '@angular/mate
 import { ModalComponent } from './modal/modal.component';
 import {ReactiveFormsModule } from '@angular/forms';
 import { TasksComponent } from './tasks/tasks.component';
-import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome'
+import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component'
 
 
 
@@ -50,7 +52,9 @@ import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawe
     SidebarComponent,
     SignComponent,
     ModalComponent,
-    TasksComponent
+    TasksComponent,
+    AboutComponent,
+    ContactComponent
   ],
   entryComponents: [
   ModalComponent

@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
     }
 
   ngOnInit() {
-    if(this.url.path()==='/' || this.url.path()==='/registration'  ){
+    if(this.url.path()==='/' || this.url.path()==='/registration' || this.url.path()==='/about' ||  this.url.path()==='/contact'   ){
 
       this.addButton = false;
       }
