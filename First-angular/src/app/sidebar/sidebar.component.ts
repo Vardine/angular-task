@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 export class SidebarComponent implements OnInit {
 
   logged_users;
-  taskList;
+  userData;
   z = [];
   items: Observable<any[]>;
   constructor(private auth: AuthService, public db: AngularFireDatabase) {
@@ -20,18 +20,29 @@ export class SidebarComponent implements OnInit {
 
     ngOnInit() {
       this.auth.getArray()
-        .subscribe(data => this.taskList = data
+        .subscribe(data => this.userData = data
         );
     }
 
       showTasks(){
-      Object.entries(this.taskList).forEach(
+        this.auth.getArray()
+          .subscribe(data => this.userData = data
+          );
+      Object.entries(this.userData).forEach(
       ([key, val]) => {
-      if(val["user"] == this.logged_users) {
+      if(val["user"] == this.logged_users ) {
+
       this.z.push(val);
+
       this.auth.job_element= this.z;
-      localStorage.setItem('tasks', JSON.stringify(this.auth.job_element));
+
 
       }
-    });}
+      else{
+        this.z = [];
+        this.auth.job_element= this.z;
+      }
+
+    });
+  }
 }

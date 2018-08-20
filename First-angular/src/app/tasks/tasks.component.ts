@@ -24,13 +24,13 @@ userData;
   }
 
   ngOnInit() {
-
-
-
-this.auth.getArray()
+  this.auth.getArray()
   .subscribe(data => this.userData = data
   );
+
+
 this.auth.changeText1();
+
     if (Object.keys(this.selected_user).length == 0 ){
 
       this.showMassege = true;
@@ -39,15 +39,22 @@ this.auth.changeText1();
         this.showMassege = false;
       }
   }
+
   deleteRow(user) {
     Object.entries(this.userData).forEach(
     ([key, val]) => {
     if(user['task'] == val['task'] && user['duration'] == val['duration']) {
     this.db.list('/').remove(key);
+
   }
+  this.auth.getArray()
+    .subscribe(data => this.userData = data
+    );
 }
-)
+);
  }
+
+
  editItem(user){
 this.auth.showUpdateButton();
 this.auth.noTaskButton();
@@ -58,14 +65,9 @@ this.auth.noTaskButton();
   title: 'Add a Task'
   };
   const dialogRef = this.dialog.open(ModalComponent, dialogConfig);
-
   /*dialogRef.afterClosed().subscribe(result => {
   this.router.navigate(['/tasks']);
   });*/
-
   this.auth.task_row=user;
-
  }
-
-
 }

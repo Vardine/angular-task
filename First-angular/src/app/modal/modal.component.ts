@@ -79,7 +79,6 @@ selectedProject(e){
       "task": this.selectedTask,
       "duration": this.selectedDuration
       });
-      console.log(this.auth.task_row['task']);
   }
  }
  )

@@ -45,8 +45,7 @@ signUser(e){
     "firstName": firstName,
     "lastName": lastName,
     "email": signEmail,
-    "password": password,
-    "job": []
+    "password": password
   };
   this.db.list('/').push(this.newUser);
   this.newUser ;
